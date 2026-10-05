@@ -1,5 +1,5 @@
-const CACHE = "aircross-max-v1";
-const BASE = ["./", "index.html", "manifest.json", "img/campana-comagro.jpg", "img/icon-192.png", "img/icon-512.png"];
+const CACHE = "aircross-max-v2";
+const BASE = ["./", "index.html", "manifest.json", "icon-192.png", "icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(BASE))); self.skipWaiting(); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))));
